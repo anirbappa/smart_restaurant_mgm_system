@@ -1,3 +1,4 @@
+
 # GustoSmart - Smart Restaurant Management System
 
 A production-ready, cloud-native full-stack MERN application designed to modernize restaurant operations. Customers can browse menus, book specific tables, place orders, and trace their preparation live, while administrators monitor the kitchen and analytics through a secure control dashboard.
@@ -137,3 +138,6 @@ Import the pre-configured Postman Collection file located at:
 `postman/smart_restaurant_api_collection.json`
 
 It features environment variables (`base_url` pointing to `http://localhost:5000`), pre-configured body models, and test scripts to **automatically extract and attach** the JWT Token upon successful Login/Register requests.
+
+# smart_restaurant_mgm_system
+
