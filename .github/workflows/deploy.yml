@@ -29,6 +29,13 @@ jobs:
         run: |
           cd frontend
           npm run build
+          
+      - name: Build and Push Backend Docker Image
+        uses: docker/build-push-action@v4
+        with:
+          context: ./frontend
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/smart-restaurant-frontend:latest    
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
