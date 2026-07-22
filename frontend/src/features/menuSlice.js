@@ -1,13 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const API_URL = 'http://localhost:5000/api/menu';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 export const fetchMenuItems = createAsyncThunk(
   'menu/fetchAll',
   async (filters = {}, thunkAPI) => {
     try {
       const { category, search } = filters;
-      let url = `${API_URL}`;
+      let url = `${API_URL/menu}`;
       const params = new URLSearchParams();
       if (category) params.append('category', category);
       if (search) params.append('search', search);
