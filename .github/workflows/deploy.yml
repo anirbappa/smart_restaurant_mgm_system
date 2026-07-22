@@ -44,7 +44,10 @@ jobs:
         with:
           context: ./frontend
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/smart-restaurant-frontend:latest    
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/smart-restaurant-frontend:latest
+          build-args: |
+            REACT_APP_API_URL=http://${{ secrets.BACKEND_IP }}:5000
+
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
