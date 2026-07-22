@@ -47,6 +47,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/smart-restaurant-frontend:latest
           build-args: |
             REACT_APP_API_URL=http://${{ secrets.BACKEND_IP }}:5000
+            VITE_API_URL: http://${{ secrets.BACKEND_IP }}:5000  
 
 
       - name: Configure AWS Credentials

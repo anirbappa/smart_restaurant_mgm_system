@@ -1,13 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
+const API_URL = import.meta.env?.VITE_API_URL || process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 export const submitFeedback = createAsyncThunk(
   'feedback/submit',
   async (feedbackData, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.token;
-      const response = await fetch(`API_URL/feedback`, {
+      const response = await fetch(`${API_URL}/feedback`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
